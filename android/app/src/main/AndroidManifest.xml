@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.platform_vip_analysis">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="platform_vip_analysis"
         android:name="${applicationName}"

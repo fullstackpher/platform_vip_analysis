@@ -5,6 +5,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:platform_vip_analysis/components/components.dart';
 import 'package:platform_vip_analysis/components/custom_scaffold.dart';
 import 'package:platform_vip_analysis/pages/home/home_controller.dart';
+import 'package:platform_vip_analysis/pages/website/website_view.dart';
 
 class HomePage extends GetView<HomeController> {
   HomePage({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class HomePage extends GetView<HomeController> {
     "https://m.iqiyi.com/",
     "https://m.youku.com",
     "https://m.mgtv.com",
-    "https://tv.sohu.com/",
+    "https://m.tv.sohu.com/",
     "https://m.le.com/",
     "https://m.pptv.com/",
     "https://m.1905.com",
@@ -88,8 +89,7 @@ class HomePage extends GetView<HomeController> {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            // TODO: 处理点击事件
-                            // Get.to(WebViewPage(appUrls[index], appNames[index]));
+                            Get.to(WebsitePage(appUrls[index]));
                           },
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
