@@ -15,7 +15,9 @@ class Global {
   static bool isFirstOpen = false;
 
   /// 是否离线登录
-  static bool isOfflineLogin = false;
+  // static bool isOfflineLogin = false;
+  // 暂不处理登陆页
+  static bool isOfflineLogin = true;
 
   /// 是否 release
   static bool get isRelease => bool.fromEnvironment("dart.vm.product");
