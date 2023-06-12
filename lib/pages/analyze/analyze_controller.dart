@@ -2,16 +2,12 @@ import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class WebsiteController extends GetxController
-    with SingleGetTickerProviderMixin {
-  late final AnimationController animationController;
-  late final TextEditingController urlController;
-
-  final currentUrl = ''.obs;
-  final currentTitle = ''.obs;
+class AnalyzeController extends GetxController {
   final currentIndex = 0.obs;
-  final isResource = false.obs;
-  final currentxl = 'https://jx.m3u8.tv/jiexi/?url='.obs;
+  final currentxl = ''.obs;
+  final currentUrl = ''.obs;
+
+  late final TextEditingController urlController;
 
   List<BrnCommonActionSheetItem> actions = [
     BrnCommonActionSheetItem(
@@ -44,32 +40,22 @@ class WebsiteController extends GetxController
     'https://jx.playerjy.com/?url=',
   ];
 
-  void updateCurrentXl(int index) => currentxl.value = xl[index];
+  void updateCurrentUrl(String url) => currentUrl.value = url;
 
-  void updateIsResource(bool isResourced) => isResource.value = isResourced;
+  void updateCurrentXlFromIndex(int index) => currentxl.value = xl[index];
+  void updateCurrentXlFromProps(String url) => currentxl.value = url;
 
   void updateCurrentIndex(int index) => currentIndex.value = index;
-
-  void updateCurrentResource(String url, String title) {
-    currentUrl.value = url;
-    currentTitle.value = title;
-  }
 
   @override
   void onInit() {
     super.onInit();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
     urlController = TextEditingController();
   }
 
   @override
-  void onClose() {
-    animationController.dispose();
-    urlController.dispose();
-  }
+  void onReady() {}
 
-  void forceUpdate() {
-    update();
-  }
+  @override
+  void onClose() {}
 }

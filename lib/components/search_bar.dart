@@ -6,7 +6,9 @@ class SearchBar extends StatelessWidget {
     Key? key,
     required TextEditingController urlController,
     required String targetContent,
-  }) : _urlController = urlController, _targetContent = targetContent, super(key: key);
+  })  : _urlController = urlController,
+        _targetContent = targetContent,
+        super(key: key);
 
   final TextEditingController _urlController;
   final String _targetContent;
